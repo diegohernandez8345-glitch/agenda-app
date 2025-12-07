@@ -1,4 +1,5 @@
-const API_BASE = process.env.REACT_APP_API_URL || 'https://agenda-app-4iqk.onrender.com';
+//const API_BASE = process.env.REACT_APP_API_URL || 'https://agenda-app-4iqk.onrender.com';
+const API_URL = "https://agenda-app-4iqk.onrender.com/api";
 
 export async function fetchTareas() {
   const res = await fetch(`${API_BASE}/tareas`);
