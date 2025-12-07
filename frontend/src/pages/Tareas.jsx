@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchTareas, crearTarea, actualizarTarea, eliminarTarea } from '../api';
+import { getTareas, crearTarea, actualizarTarea, eliminarTarea } from '../api';
 import TaskCard from '../components/TaskCard';
 
 export default function Tareas(){
@@ -7,7 +7,7 @@ export default function Tareas(){
   const [form, setForm] = useState({ titulo:'', fecha:'', descripcion:'', estatus:'pendiente' });
 
   const load = async () => {
-    const data = await fetchTareas();
+    const data = await getTareas();
     setTareas(data);
   };
 
