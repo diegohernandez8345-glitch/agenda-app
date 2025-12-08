@@ -1,12 +1,12 @@
 const API_BASE = "https://agenda-app-4iqk.onrender.com/api";
 
-// Obtener tareas
+// ✅ OBTENER TAREAS
 export async function getTareas() {
   const res = await fetch(`${API_BASE}/tareas`);
   return res.json();
 }
 
-// Crear tarea
+// ✅ CREAR TAREA
 export async function crearTarea(data) {
   const res = await fetch(`${API_BASE}/tareas`, {
     method: "POST",
@@ -19,7 +19,7 @@ export async function crearTarea(data) {
   return res.json();
 }
 
-// Eliminar tarea
+// ✅ ELIMINAR TAREA
 export async function eliminarTarea(id) {
   const res = await fetch(`${API_BASE}/tareas/${id}`, {
     method: "DELETE",
@@ -28,4 +28,16 @@ export async function eliminarTarea(id) {
   return res.json();
 }
 
+// ✅ ACTUALIZAR TAREA (ESTA ES LA QUE FALTABA)
+export async function actualizarTarea(id, data) {
+  const res = await fetch(`${API_BASE}/tareas/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  return res.json();
+}
 
